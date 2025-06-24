@@ -1,10 +1,11 @@
 import React from "react"
 import styles from "./ButtonComponent.module.css"
+import { iconMap, IconName } from "../assets/iconAssets"
 
 export interface ButtonComponentProps {
   text?: string
-  leftIconSrc?: string
-  rightIconSrc?: string
+  leftIconSrc?: IconName
+  rightIconSrc?: IconName
   size?: "default" | "small" | "large"
   type?: "primary" | "secondary" | "tertiary"
   state?: "default" | "hover" | "active" | "disabled"
@@ -30,9 +31,13 @@ export const ButtonComponent: React.FC<ButtonComponentProps> = ({
       onClick={onClick}
       disabled={state === "disabled"}
     >
-      {leftIconSrc && <img src={leftIconSrc} alt="left icon" />}
+      {leftIconSrc && iconMap[leftIconSrc] && (
+        <img src={iconMap[leftIconSrc]} alt="left icon" />
+      )}
       {text}
-      {rightIconSrc && <img src={rightIconSrc} alt="right icon" />}
+      {rightIconSrc && iconMap[rightIconSrc] && (
+        <img src={iconMap[rightIconSrc]} alt="right icon" />
+      )}
     </button>
   )
 }

@@ -1,9 +1,6 @@
-// import React from 'react';
 import { Meta, StoryObj } from "@storybook/react"
-import {
-  ButtonComponent,
-  // ButtonComponentProps,
-} from "./Components/ButtonComponent"
+import { ButtonComponent } from "./Components/ButtonComponent"
+import { iconMap } from "./assets/iconAssets"
 
 const meta: Meta<typeof ButtonComponent> = {
   title: "Components/ButtonComponent",
@@ -16,10 +13,19 @@ const meta: Meta<typeof ButtonComponent> = {
       control: "select",
       options: ["default", "hover", "active", "disabled"],
     },
+    leftIconSrc: {
+      control: "select",
+      options: Object.keys(iconMap),
+    },
+    rightIconSrc: {
+      control: "select",
+      options: Object.keys(iconMap),
+    },
   },
 }
 
 export default meta
+
 type Story = StoryObj<typeof ButtonComponent>
 
 export const Default: Story = {
@@ -29,29 +35,7 @@ export const Default: Story = {
     size: "default",
     state: "default",
     onClick: () => alert("Button clicked!"),
-    leftIconSrc: "",
-    rightIconSrc: "",
+    leftIconSrc: "defaultLight",
+    rightIconSrc: "defaultLight",
   },
 }
-
-// export const WithIcons: Story = {
-//   args: {
-//     text: "Icon Button",
-//     leftIconSrc: "https://via.placeholder.com/16",
-//     rightIconSrc: "https://via.placeholder.com/16",
-//     type: "secondary",
-//     size: "large",
-//     state: "default",
-//   },
-// }
-
-// type CustomStory = StoryObj<ButtonComponentProps>
-
-// export const CustomStory: Story = {
-//   args: {
-//     text: "Hello",
-//     type: "primary",
-//     size: "default",
-//     state: "default",
-//   },
-// }
