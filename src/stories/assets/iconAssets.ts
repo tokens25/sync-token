@@ -1,15 +1,9 @@
-import PrimaryIcon from "/icons/icon-default-dark.png"
-import SecondaryIcon from "/icons/icon-default-light.png"
-import TetriaryIcon from "/icons/icon-default-light.png"
-import SubscribeIcon from "/icons/icon-default-dark.png"
-
 export const iconMap = {
-  none: null,
-  primary: PrimaryIcon,
-  secondary: SecondaryIcon,
-  tertiary: TetriaryIcon,
-  subscribe: SubscribeIcon,
+  none: "",
+  primary: "/icons/icon-default-dark.png",
+  secondary: "/icons/icon-default-light.png",
+  tertiary: "/icons/icon-default-light.png",
+  subscribe: "/icons/icon-default-dark.png",
 } as const
 
-// Export a union type of the keys
-export type IconName = keyof typeof iconMap
+export type IconName = keyof typeof iconMap | "icon" | "no icon"

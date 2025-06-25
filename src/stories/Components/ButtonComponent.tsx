@@ -1,11 +1,11 @@
 import React from "react"
 import styles from "./ButtonComponent.module.css"
-import { iconMap, IconName } from "../assets/iconAssets"
+// import { iconMap, IconName } from "../assets/iconAssets";
 
 export interface ButtonComponentProps {
   text?: string
-  leftIconSrc?: IconName
-  rightIconSrc?: IconName
+  leftIconSrc?: "icon" | "no icon" // Accept 'icon' or 'no icon'
+  rightIconSrc?: "icon" | "no icon" // Accept 'icon' or 'no icon'
   size?: "default" | "small" | "large"
   type?: "primary" | "secondary" | "tertiary" | "subscribe"
   state?: "default" | "hover" | "active" | "disabled"
@@ -14,8 +14,8 @@ export interface ButtonComponentProps {
 
 export const ButtonComponent: React.FC<ButtonComponentProps> = ({
   text,
-  leftIconSrc = "none",
-  rightIconSrc = "none",
+  leftIconSrc = "no icon",
+  rightIconSrc = "no icon",
   size = "default",
   type = "primary",
   state = "default",
@@ -25,8 +25,15 @@ export const ButtonComponent: React.FC<ButtonComponentProps> = ({
     .filter(Boolean)
     .join(" ")
 
-  const LeftIcon = iconMap[leftIconSrc]
-  const RightIcon = iconMap[rightIconSrc]
+  // Conditionally render icon based on 'icon' or 'no icon'
+  const LeftIcon =
+    leftIconSrc === "icon" ? (
+      <img src="/icons/icon-default-light.png" alt="left icon" />
+    ) : null
+  const RightIcon =
+    rightIconSrc === "icon" ? (
+      <img src="/icons/icon-default-light.png" alt="right icon" />
+    ) : null
 
   const iconStyle: React.CSSProperties = {
     width: 20,
@@ -40,9 +47,9 @@ export const ButtonComponent: React.FC<ButtonComponentProps> = ({
       onClick={onClick}
       disabled={state === "disabled"}
     >
-      {LeftIcon && <img src={LeftIcon} alt="left icon" style={iconStyle} />}
+      {LeftIcon && <span style={iconStyle}>{LeftIcon}</span>}
       {text}
-      {RightIcon && <img src={RightIcon} alt="right icon" style={iconStyle} />}
+      {RightIcon && <span style={iconStyle}>{RightIcon}</span>}
     </button>
   )
 }
