@@ -7,15 +7,15 @@ export interface ButtonComponentProps {
   leftIconSrc?: IconName
   rightIconSrc?: IconName
   size?: "default" | "small" | "large"
-  type?: "primary" | "secondary" | "tertiary"
+  type?: "primary" | "secondary" | "tertiary" | "subscribe"
   state?: "default" | "hover" | "active" | "disabled"
   onClick?: () => void
 }
 
 export const ButtonComponent: React.FC<ButtonComponentProps> = ({
   text,
-  leftIconSrc,
-  rightIconSrc,
+  leftIconSrc = "none",
+  rightIconSrc = "none",
   size = "default",
   type = "primary",
   state = "default",
@@ -25,19 +25,24 @@ export const ButtonComponent: React.FC<ButtonComponentProps> = ({
     .filter(Boolean)
     .join(" ")
 
+  const LeftIcon = iconMap[leftIconSrc]
+  const RightIcon = iconMap[rightIconSrc]
+
+  const iconStyle: React.CSSProperties = {
+    width: 20,
+    height: 20,
+    marginInline: 4,
+  }
+
   return (
     <button
       className={className}
       onClick={onClick}
       disabled={state === "disabled"}
     >
-      {leftIconSrc && iconMap[leftIconSrc] && (
-        <img src={iconMap[leftIconSrc]} alt="left icon" />
-      )}
+      {LeftIcon && <img src={LeftIcon} alt="left icon" style={iconStyle} />}
       {text}
-      {rightIconSrc && iconMap[rightIconSrc] && (
-        <img src={iconMap[rightIconSrc]} alt="right icon" />
-      )}
+      {RightIcon && <img src={RightIcon} alt="right icon" style={iconStyle} />}
     </button>
   )
 }

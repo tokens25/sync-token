@@ -1,13 +1,15 @@
 import { Meta, StoryObj } from "@storybook/react"
 import { ButtonComponent } from "./Components/ButtonComponent"
-import { iconMap } from "./assets/iconAssets"
 
 const meta: Meta<typeof ButtonComponent> = {
   title: "Components/ButtonComponent",
   component: ButtonComponent,
   tags: ["autodocs"],
   argTypes: {
-    type: { control: "select", options: ["primary", "secondary", "tertiary"] },
+    type: {
+      control: "select",
+      options: ["primary", "secondary", "tertiary", "subscribe"],
+    },
     size: { control: "select", options: ["default", "small", "large"] },
     state: {
       control: "select",
@@ -15,11 +17,11 @@ const meta: Meta<typeof ButtonComponent> = {
     },
     leftIconSrc: {
       control: "select",
-      options: Object.keys(iconMap),
+      options: ["icon", "no icon"], // Only 'icon' and 'no icon' options
     },
     rightIconSrc: {
       control: "select",
-      options: Object.keys(iconMap),
+      options: ["icon", "no icon"], // Only 'icon' and 'no icon' options
     },
   },
 }
@@ -30,12 +32,12 @@ type Story = StoryObj<typeof ButtonComponent>
 
 export const Default: Story = {
   args: {
-    text: "Click me",
+    text: "Click Me",
     type: "primary",
     size: "default",
     state: "default",
     onClick: () => alert("Button clicked!"),
-    leftIconSrc: "defaultLight",
-    rightIconSrc: "defaultLight",
+    leftIconSrc: "icon", // 'icon' selected by default
+    rightIconSrc: "no icon", // 'no icon' selected by default
   },
 }
