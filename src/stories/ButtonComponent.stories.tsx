@@ -4,6 +4,13 @@ import { ButtonComponent } from "./Components/ButtonComponent"
 const meta: Meta<typeof ButtonComponent> = {
   title: "Components/ButtonComponent",
   component: ButtonComponent,
+  decorators: [
+    Story => (
+      <div style={{ backgroundColor: "#333", padding: 20 }}>
+        <Story />
+      </div>
+    ),
+  ],
   tags: ["autodocs"],
   argTypes: {
     type: {

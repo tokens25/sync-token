@@ -30,7 +30,7 @@ export const ButtonComponent: React.FC<ButtonComponentProps> = ({
   const iconStyle: React.CSSProperties = {
     width: 20,
     height: 20,
-    marginInline: 4,
+    marginInline: 10,
   }
 
   return (
