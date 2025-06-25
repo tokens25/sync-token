@@ -6,4 +6,4 @@ export const iconMap = {
   subscribe: "/icons/icon-default-dark.png",
 } as const
 
-export type IconName = keyof typeof iconMap | "icon" | "no icon"
+export type IconType = keyof typeof iconMap

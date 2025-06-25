@@ -15,13 +15,13 @@ const meta: Meta<typeof ButtonComponent> = {
       control: "select",
       options: ["default", "hover", "active", "disabled"],
     },
-    leftIconSrc: {
-      control: "select",
-      options: ["icon", "no icon"], // Only 'icon' and 'no icon' options
+    showLeftIcon: {
+      control: "boolean",
+      defaultValue: false,
     },
-    rightIconSrc: {
-      control: "select",
-      options: ["icon", "no icon"], // Only 'icon' and 'no icon' options
+    showRightIcon: {
+      control: "boolean",
+      defaultValue: false,
     },
   },
 }
@@ -36,8 +36,8 @@ export const Default: Story = {
     type: "primary",
     size: "default",
     state: "default",
+    showLeftIcon: true,
+    showRightIcon: false,
     onClick: () => alert("Button clicked!"),
-    leftIconSrc: "icon", // 'icon' selected by default
-    rightIconSrc: "no icon", // 'no icon' selected by default
   },
 }

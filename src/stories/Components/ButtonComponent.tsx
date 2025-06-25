@@ -1,11 +1,11 @@
 import React from "react"
 import styles from "./ButtonComponent.module.css"
-// import { iconMap, IconName } from "../assets/iconAssets";
+import { iconMap } from "../assets/iconAssets"
 
 export interface ButtonComponentProps {
   text?: string
-  leftIconSrc?: "icon" | "no icon" // Accept 'icon' or 'no icon'
-  rightIconSrc?: "icon" | "no icon" // Accept 'icon' or 'no icon'
+  showLeftIcon?: boolean
+  showRightIcon?: boolean
   size?: "default" | "small" | "large"
   type?: "primary" | "secondary" | "tertiary" | "subscribe"
   state?: "default" | "hover" | "active" | "disabled"
@@ -14,8 +14,8 @@ export interface ButtonComponentProps {
 
 export const ButtonComponent: React.FC<ButtonComponentProps> = ({
   text,
-  leftIconSrc = "no icon",
-  rightIconSrc = "no icon",
+  showLeftIcon = false,
+  showRightIcon = false,
   size = "default",
   type = "primary",
   state = "default",
@@ -25,15 +25,7 @@ export const ButtonComponent: React.FC<ButtonComponentProps> = ({
     .filter(Boolean)
     .join(" ")
 
-  // Conditionally render icon based on 'icon' or 'no icon'
-  const LeftIcon =
-    leftIconSrc === "icon" ? (
-      <img src="/icons/icon-default-light.png" alt="left icon" />
-    ) : null
-  const RightIcon =
-    rightIconSrc === "icon" ? (
-      <img src="/icons/icon-default-light.png" alt="right icon" />
-    ) : null
+  const iconSrc = iconMap[type] // Automatically match icon based on `type`
 
   const iconStyle: React.CSSProperties = {
     width: 20,
@@ -47,9 +39,17 @@ export const ButtonComponent: React.FC<ButtonComponentProps> = ({
       onClick={onClick}
       disabled={state === "disabled"}
     >
-      {LeftIcon && <span style={iconStyle}>{LeftIcon}</span>}
+      {showLeftIcon && (
+        <span style={iconStyle}>
+          <img src={iconSrc} alt="left icon" />
+        </span>
+      )}
       {text}
-      {RightIcon && <span style={iconStyle}>{RightIcon}</span>}
+      {showRightIcon && (
+        <span style={iconStyle}>
+          <img src={iconSrc} alt="right icon" />
+        </span>
+      )}
     </button>
   )
 }
