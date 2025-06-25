@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react"
 import { ButtonComponent } from "./Components/ButtonComponent"
 
 const meta: Meta<typeof ButtonComponent> = {
-  title: "Components/ButtonComponent",
+  title: "DAZN Components/ButtonComponent",
   component: ButtonComponent,
   decorators: [
     Story => (
@@ -37,8 +37,11 @@ export default meta
 
 type Story = StoryObj<typeof ButtonComponent>
 
-export const Default: Story = {
+export const Button: Story = {
   parameters: {
+    darkMode: {
+      classTarget: "html",
+    },
     design: {
       type: "figma",
       url: "https://www.figma.com/design/SD0U13iKHxQnd8h4N5r94V/Desktop-Components?node-id=2332-2857&m=dev",
@@ -50,7 +53,7 @@ export const Default: Story = {
     size: "default",
     state: "default",
     showLeftIcon: true,
-    showRightIcon: false,
+    showRightIcon: true,
     onClick: () => alert("Button clicked!"),
   },
 }

@@ -18,7 +18,7 @@ export default meta
 
 type Story = StoryObj<typeof ColorPalette>
 
-export const Default: Story = {
+export const Colors: Story = {
   args: {
     colors: [
       { name: "Primary", hex: "#FF0050" },
