@@ -9,6 +9,8 @@ const config: StorybookConfig = {
     "@storybook/addon-docs",
     "@storybook/addon-essentials",
     "storybook-dark-mode",
+    "@storybook/addon-storysource",
+    "@storybook/addon-designs",
   ],
   framework: {
     name: "@storybook/react-vite",
