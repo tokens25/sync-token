@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@atlaskit/storybook-addon-design-system": "^3.1.1",
+    "@storybook/blocks": "^8.6.14",
     "gh-pages": "^6.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
@@ -26,7 +27,7 @@
     "@eslint/js": "^9.22.0",
     "@storybook/addon-backgrounds": "^9.0.8",
     "@storybook/addon-designs": "^10.0.1",
-    "@storybook/addon-docs": "^9.0.12",
+    "@storybook/addon-docs": "^9.0.13",
     "@storybook/addon-onboarding": "^9.0.12",
     "@storybook/addon-storysource": "^8.6.14",
     "@storybook/addon-vitest": "9.0.12",

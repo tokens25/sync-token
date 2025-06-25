@@ -14,6 +14,7 @@ import { themes } from "@storybook/theming"
 
 const preview: Preview = {
   // decorators: [withDarkCanvas],
+
   parameters: {
     backgrounds: {
       default: "dark", // ✅ set dark as default
