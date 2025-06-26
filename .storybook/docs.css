@@ -1,0 +1,14 @@
+.sbdocs-wrapper,
+.sbdocs,
+.sbdocs-content,
+.sbdocs h1,
+.sbdocs h2,
+.sbdocs h3,
+.sbdocs h4,
+.sbdocs p,
+.sbdocs code {
+  font-family: "DAZN Oscine", sans-serif !important;
+}
+h1.sbdocs-title {
+  color: white;
+}

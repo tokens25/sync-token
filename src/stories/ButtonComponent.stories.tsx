@@ -4,13 +4,13 @@ import { ButtonComponent } from "./Components/ButtonComponent"
 const meta: Meta<typeof ButtonComponent> = {
   title: "DAZN Components/ButtonComponent",
   component: ButtonComponent,
-  decorators: [
-    Story => (
-      <div style={{ backgroundColor: "#333", padding: 20 }}>
-        <Story />
-      </div>
-    ),
-  ],
+  // decorators: [
+  //   Story => (
+  //     <div style={{ backgroundColor: "#080E12", padding: 20 }}>
+  //       <Story />
+  //     </div>
+  //   ),
+  // ],
   tags: ["autodocs"],
   argTypes: {
     type: {

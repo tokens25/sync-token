@@ -8,7 +8,7 @@ const config: StorybookConfig = {
     "@storybook/addon-vitest",
     "@storybook/addon-docs",
     "@storybook/addon-essentials",
-    "storybook-dark-mode",
+    "storybook-dark-mode", // adding dark mode
     "@storybook/addon-storysource",
     "@storybook/addon-designs",
   ],

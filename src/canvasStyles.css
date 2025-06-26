@@ -1,0 +1,37 @@
+.sbdocs.sbdocs-wrapper {
+  background: #080e12;
+}
+thead.docblock-argstable-head tr th {
+  color: #5c6870 !important;
+}
+.sbdocs-preview.sb-unstyled {
+  background: #080e12;
+  border: 1px solid #2a2c2e;
+}
+.storybook-preview-wrapper {
+  background: #080e12;
+}
+.sb-show-main.sb-main-padded {
+  color: white;
+}
+.sbdocs-preview .sb-bar {
+  background: #2a2c2e;
+}
+button.docblock-code-toggle {
+  background-color: #2a2c2e;
+  color: #f9fafa;
+  margin: 0px 0px 0px -4px;
+}
+table tbody.docblock-argstable-body > tr > td {
+  background: #2a2c2e !important;
+  color: #73828c;
+}
+/* table tbody.docblock-argstable-body > tr > td div span {
+  background-color: #92a6b4;
+  border: 0;
+} */
+textarea#control-text {
+  background-color: #2a2c2e;
+  color: #f9fafa;
+  border: 1px solid #4e5154;
+}
